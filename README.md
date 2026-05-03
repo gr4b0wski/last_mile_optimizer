@@ -17,21 +17,6 @@ This project mimics a real-world enterprise ML infrastructure:
 * **Serving Layer:** `FastAPI` exposes the ML models as a high-performance REST API.
 * **Containerization:** `Docker` encapsulates the OS, Python environment, and dependencies, guaranteeing a true "run-anywhere" deployment.
 
-## Project Structure
-```text
-last_mile_optimizer/
-├── data/
-│   ├── raw/             # Raw datasets (tracked by DVC)
-│   └── processed/       # Cleaned data ready for modeling
-├── notebooks/           # Jupyter notebooks for EDA
-├── src/
-│   ├── model.py         # ML logic (DBSCAN + TSP) & MLflow tracking
-│   ├── api.py           # FastAPI endpoints
-│   └── visualize.py     # Folium map generation script
-├── pyproject.toml       # Poetry dependencies configuration
-├── Dockerfile           # Container build instructions
-└── mlflow.db            # Local SQLite database for MLflow tracking
-```
 
 ## Quick Start (Docker)
 
