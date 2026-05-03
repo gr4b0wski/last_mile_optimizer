@@ -1,0 +1,19 @@
+# Środowiska wirtualne i cache
+.venv/
+__pycache__/
+*.pyc
+
+# MLflow (baza danych i artefakty)
+mlflow.db
+mlruns/
+
+# DVC (lokalny cache i konfiguracje)
+/data/raw/*.csv
+/data/processed/*.csv
+.dvc/cache/
+.dvc/tmp/
+
+# Inne wygenerowane pliki
+route_map.html
+.idea/
+.vscode/
