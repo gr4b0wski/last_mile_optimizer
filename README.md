@@ -87,7 +87,7 @@ The fastest way to run the optimizer is via Docker. Ensure Docker Desktop is run
 }
 ```
 
-## 🗺️ Visualization
+## Visualization
 Run the visualization script to test the API and generate an interactive `route_map.html` using Folium:
 ```bash
 poetry run python src/visualize.py
