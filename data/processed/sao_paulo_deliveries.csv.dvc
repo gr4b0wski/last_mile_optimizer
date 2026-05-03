@@ -1,0 +1,5 @@
+outs:
+- md5: 2a6c237ca3c1c8b0c28ef619398697f0
+  size: 5514116
+  hash: md5
+  path: sao_paulo_deliveries.csv
