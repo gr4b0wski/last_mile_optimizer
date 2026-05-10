@@ -17,10 +17,28 @@ This project mimics a real-world enterprise ML infrastructure:
 * **Serving Layer:** `FastAPI` exposes the ML models as a high-performance REST API.
 * **Containerization:** `Docker` encapsulates the OS, Python environment, and dependencies, guaranteeing a true "run-anywhere" deployment.
 
+---
 
-## Quick Start (Docker)
+## Getting Started
 
-The fastest way to run the optimizer is via Docker. Ensure Docker Desktop is running.
+### Prerequisites
+Before you begin, ensure you have the following installed on your machine:
+* **Git** (to download the code)
+* **Docker Desktop** (if choosing the Docker method)
+* **Python 3.9+** and **Poetry** (if choosing the Local Development method)
+
+### Step 1: Get the Code
+Open your terminal and run the following commands to clone the repository and navigate into the project folder:
+
+```bash
+git clone https://github.com/gr4b0wski/last-mile-optimizer.git
+cd last-mile-optimizer
+```
+
+### Step 2: Choose Your Execution Method
+
+#### Option A: Quick Start (Docker - Recommended)
+The fastest way to run the optimizer without worrying about local dependencies. Ensure Docker Desktop is running in the background.
 
 1. **Build the image:**
    ```bash
@@ -33,24 +51,29 @@ The fastest way to run the optimizer is via Docker. Ensure Docker Desktop is run
 3. **Access the API Documentation:**
    Open `http://127.0.0.1:8000/docs` in your browser to use the interactive Swagger UI.
 
-## Local Development (Poetry)
+#### Option B: Local Development (Poetry)
+Ideal if you want to modify the code, run experiments, or view the MLflow dashboard.
 
-1. **Install dependencies:**
+1. **Install all dependencies:**
    ```bash
    poetry install
    ```
-2. **Activate the environment:**
+2. **Activate the virtual environment:**
    ```bash
-   poetry env activate
+   poetry shell
    ```
-3. **Run MLflow tracking server (optional):**
+3. **Run the MLflow tracking server:**
    ```bash
    mlflow ui --backend-store-uri sqlite:///mlflow.db
    ```
-4. **Run the FastAPI server:**
+   *Note: The MLflow dashboard is now running at `http://127.0.0.1:5000`. This terminal is now blocked.*
+4. **Run the FastAPI server (Open a NEW terminal tab):**
+   Open a second terminal window, navigate back to the project folder (`cd last-mile-optimizer`), and start the API:
    ```bash
    poetry run uvicorn src.api:app --reload
    ```
+
+---
 
 ## API Usage Example
 
@@ -84,7 +107,8 @@ The fastest way to run the optimizer is via Docker. Ensure Docker Desktop is run
 ```
 
 ## Visualization
-Run the visualization script to test the API and generate an interactive `route_map.html` using Folium:
+You can generate a visual map of the optimized routes using Folium. In a new terminal tab (while the FastAPI server is running), execute:
 ```bash
 poetry run python src/visualize.py
 ```
+This will create a `route_map.html` file in your root directory that you can open in any web browser.
