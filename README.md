@@ -40,8 +40,7 @@ The fastest way to run the optimizer is via Docker. Ensure Docker Desktop is run
 1. **Install dependencies:**
    ```bash
    poetry install
-   
-```
+   ```
 2. **Activate the environment:**
    ```bash
    poetry env activate
