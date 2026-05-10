@@ -3,7 +3,6 @@ import folium
 
 API_URL = "http://127.0.0.1:8000/optimize"
 
-# Dokładnie te same punkty, które przed chwilą testowałeś
 payload = {
     "epsilon_km": 10.0,
     "min_samples": 3,
