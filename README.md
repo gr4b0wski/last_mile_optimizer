@@ -25,13 +25,11 @@ The fastest way to run the optimizer is via Docker. Ensure Docker Desktop is run
 1. **Build the image:**
    ```bash
    docker build -t last-mile-api .
-   
-```
+   ```
 2. **Run the container:**
    ```bash
    docker run -p 8000:8000 last-mile-api
-   
-```
+   ```
 3. **Access the API Documentation:**
    Open `http://127.0.0.1:8000/docs` in your browser to use the interactive Swagger UI.
 
@@ -46,8 +44,7 @@ The fastest way to run the optimizer is via Docker. Ensure Docker Desktop is run
    poetry env activate
    ```
 3. **Run MLflow tracking server (optional):**
-   
-```bash
+   ```bash
    mlflow ui --backend-store-uri sqlite:///mlflow.db
    ```
 4. **Run the FastAPI server:**
