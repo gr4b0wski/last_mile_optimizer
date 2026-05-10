@@ -107,8 +107,23 @@ Ideal if you want to modify the code, run experiments, or view the MLflow dashbo
 ```
 
 ## Visualization
-You can generate a visual map of the optimized routes using Folium. In a new terminal tab (while the FastAPI server is running), execute:
-```bash
-poetry run python src/visualize.py
-```
-This will create a `route_map.html` file in your root directory that you can open in any web browser.
+
+You can generate an interactive visual map of the optimized routes using Folium. The command depends on how you are running the project.
+
+### Option A: If using Docker
+Since the application is isolated inside a container, you need to execute the script inside it and extract the generated HTML file. Open a **new terminal tab** and run:
+
+1. **Find your running container ID:**
+   docker ps
+
+2. **Run the visualization script inside the container** (replace <CONTAINER_ID> with the actual ID from the previous step):
+   docker exec -it <CONTAINER_ID> python src/visualize.py
+
+3. **Copy the generated map to your local machine:**
+   docker cp <CONTAINER_ID>:/app/route_map.html .
+
+### Option B: If using Poetry
+In a **new terminal tab** (while the FastAPI server is running in the first one), execute:
+   poetry run python src/visualize.py
+
+**Result:** Both methods will generate a route_map.html file in your root project directory. Double-click it to open the interactive map in any web browser.
