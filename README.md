@@ -31,8 +31,8 @@ Before you begin, ensure you have the following installed on your machine:
 Open your terminal and run the following commands to clone the repository and navigate into the project folder:
 
 ```bash
-git clone https://github.com/gr4b0wski/last-mile-optimizer.git
-cd last-mile-optimizer
+git clone https://github.com/gr4b0wski/last_mile_optimizer.git
+cd last_mile_optimizer
 ```
 
 ### Step 2: Choose Your Execution Method
